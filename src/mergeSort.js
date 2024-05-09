@@ -6,10 +6,7 @@ const mergeSort = (arr) => {
 
   const leftHalf = arr.toSpliced(leftCount);
   const rightHalf = arr.toSpliced(0, leftCount);
-  console.log("left: ", leftHalf, "\tright: ", rightHalf);
-
   return merge(mergeSort(leftHalf), mergeSort(rightHalf));
-  
 };
 
 const merge = (left, right) => {
@@ -19,13 +16,12 @@ const merge = (left, right) => {
 
   while (i < left.length && j < right.length) {
     if (left[i] <= right[j]) {
-      res.push(left.at(i))
+      res.push(left.at(i));
       ++i;
     } else if (left[i] > right[j]) {
-      res.push(right.at(j))
+      res.push(right.at(j));
       ++j;
     }
-
   }
 
   // Cleanup for remaining elements in left
@@ -44,7 +40,7 @@ const merge = (left, right) => {
 };
 
 const test = [9, 24, 5, 10, -10, 10];
-console.log("original", test , "\n");
+console.log("original", test);
 const res = mergeSort(test);
 
 console.log("\nsorted: ", res);
