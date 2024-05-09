@@ -16,32 +16,28 @@ const merge = (arr1, arr2) => {
   const res = [];
   let i = 0;
   let j = 0;
-  let k = 0;
 
   while (i < arr1.length && j < arr2.length) {
     if (arr1[i] <= arr2[j]) {
-      res[k] = arr1[i];
+      res.push(arr1.at(i))
       ++i;
     } else if (arr1[i] > arr2[j]) {
-      res[k] = arr2[j];
+      res.push(arr2.at(j))
       ++j;
     }
 
-    ++k;
   }
 
   // Cleanup for remaining elements in arr1
   while (i < arr1.length) {
-    res[k] = arr1[i];
+    res.push(arr1.at(i));
     ++i;
-    ++k;
   }
 
   // Cleanup for remaining elements in arr1
   while (j < arr2.length) {
-    res[k] = arr2[j];
+    res.push(arr2.at(j));
     ++j;
-    ++k;
   }
 
   return res;
