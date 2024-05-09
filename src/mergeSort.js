@@ -12,31 +12,31 @@ const mergeSort = (arr) => {
   
 };
 
-const merge = (arr1, arr2) => {
+const merge = (left, right) => {
   const res = [];
   let i = 0;
   let j = 0;
 
-  while (i < arr1.length && j < arr2.length) {
-    if (arr1[i] <= arr2[j]) {
-      res.push(arr1.at(i))
+  while (i < left.length && j < right.length) {
+    if (left[i] <= right[j]) {
+      res.push(left.at(i))
       ++i;
-    } else if (arr1[i] > arr2[j]) {
-      res.push(arr2.at(j))
+    } else if (left[i] > right[j]) {
+      res.push(right.at(j))
       ++j;
     }
 
   }
 
-  // Cleanup for remaining elements in arr1
-  while (i < arr1.length) {
-    res.push(arr1.at(i));
+  // Cleanup for remaining elements in left
+  while (i < left.length) {
+    res.push(left.at(i));
     ++i;
   }
 
-  // Cleanup for remaining elements in arr1
-  while (j < arr2.length) {
-    res.push(arr2.at(j));
+  // Cleanup for remaining elements in left
+  while (j < right.length) {
+    res.push(right.at(j));
     ++j;
   }
 
