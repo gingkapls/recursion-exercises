@@ -30,7 +30,7 @@ const merge = (left, right) => {
     ++i;
   }
 
-  // Cleanup for remaining elements in left
+  // Cleanup for remaining elements in right
   while (j < right.length) {
     res.push(right.at(j));
     ++j;
